@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>我们要结婚了 · 池才龙 & 李晓文</title>
+<meta name="description" content="我们要结婚了，想请你来吃顿饭。">
+<!-- 微信分享卡片必须用「绝对 URL」，换域名时记得同步改下面三行 -->
+<meta property="og:type" content="website">
+<meta property="og:url"   content="https://cpegasus.github.io/wedding-invite/">
+<meta property="og:title" content="我们要结婚了 · 池才龙 & 李晓文">
+<meta property="og:description" content="11月7日中午，想请你来吃顿饭">
+<meta property="og:image" content="https://cpegasus.github.io/wedding-invite/assets/photo-1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+/* ============================================================
+   简约 · 暖白  设计令牌
+   ============================================================ */
+:root{
+  --paper:#FBF8F3;
+  --paper-2:#F3EDE4;
+  --ink:#2B2622;
+  --ink-soft:#6E635A;
+  --ink-faint:#A79C93;
+  --accent:#B4674A;
+  --line:rgba(43,38,34,.13);
+
+  /* ══════════ 中文字体 · 一键替换 ══════════
+     想换字体，只改下面「--font-body」这一行冒号后面的值：
+         var(--f-song)   宋体   （现在用的，偏典雅）
+         var(--f-hei)    黑体   （现代干净，手机上最稳）
+         var(--f-kai)    楷体   （手写感）
+         var(--f-yuan)   圆体   （Windows 上就是幼圆）
+         var(--f-li)     隶书   （古风，建议只做大标题）
+     小标签（英文小字、提示语）单独用 --font-label，一般不用动。
+     ══════════════════════════════════════ */
+
+  /* 字体预设（这些不用改） */
+  --f-song:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","SimSun",serif;
+  --f-hei:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Source Han Sans SC","Microsoft YaHei",system-ui,sans-serif;
+  --f-kai:"Kaiti SC","STKaiti","KaiTi",serif;
+  --f-yuan:"Yuanti SC","YouYuan","幼圆",sans-serif;
+  --f-li:"STLiti","LiSu","隶书",serif;
+
+  /* ★ 想换字体就改这一行 ★ */
+  --font-body:var(--f-hei);
+  --font-label:var(--f-hei);
+  /* 旧值备份：--font-body:var(--f-song); */
+
+  --pad:clamp(22px,6.5vw,38px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--font-body);line-height:1.95;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+
+/* 极淡颗粒，只为去掉数码味，不抢戏 */
+#grain{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.16;mix-blend-mode:multiply}
+
+.eyebrow{
+  font-family:var(--font-label);font-size:10.5px;letter-spacing:.4em;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:400;
+}
+.sec{padding:clamp(70px,17vw,120px) var(--pad)}
+.sec-title{
+  font-size:clamp(21px,5.8vw,27px);letter-spacing:.12em;
+  font-weight:500;margin-bottom:12px;
+}
+.sec-sub{font-size:13.5px;color:var(--ink-soft);letter-spacing:.06em;line-height:1.9}
+/* 重点句「我们好提前订位」——单独放大，不影响其它 .sec-sub */
+#rsvpSub{font-size:clamp(15px,4.2vw,16.5px);letter-spacing:.08em;line-height:1.85;color:var(--ink-soft)}
+
+.rise{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none}}
+
+/* ============================================================
+   封面
+   ============================================================ */
+#cover{
+  position:relative;height:100svh;min-height:540px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;
+}
+#cover .bg{
+  position:absolute;inset:0;
+  /* 开场：从放大缓缓回正 + 渐显，像电影推镜头 */
+  animation:coverIn 2s var(--ease) both;
+}
+#cover .bg img{
+  width:100%;height:100%;object-fit:cover;object-position:center 30%;
+  filter:saturate(.94) contrast(1.02);
+  /* 基础 scale 与 drift 的起点一致，避免循环接上时跳一下 */
+  transform:scale(1.06);
+  animation:drift 18s var(--ease) 1.6s infinite alternate;
+  will-change:transform;
+}
+/* 缓慢推近 + 轻微上移。
+   起点 scale 已留足 3% 的垂直余量，上移 1.8% 不会露边 */
+@keyframes drift{
+  from{transform:scale(1.06) translate3d(0,0,0)}
+  to  {transform:scale(1.14) translate3d(0,-1.8%,0)}
+}
+@keyframes coverIn{
+  from{opacity:0;transform:scale(1.1)}
+  to  {opacity:1;transform:none}
+}
+#cover .scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(52,39,29,.30) 0%,rgba(52,39,29,.04) 30%,rgba(48,36,27,.62) 100%);
+}
+#cover .inner{
+  position:relative;color:#FDF9F3;padding:0 var(--pad) clamp(58px,15vw,86px);width:100%;
+}
+/* 封面文字：一行接一行浮现 */
+#cover .inner > *{animation:fadeUp .95s var(--ease) both}
+#cover .inner > :nth-child(1){animation-delay:.42s}
+#cover .inner > :nth-child(2){animation-delay:.60s}
+#cover .inner > :nth-child(3){animation-delay:.78s}
+#cover .inner > :nth-child(4){animation-delay:.98s}
+#cover .inner > :nth-child(5){animation-delay:1.12s}
+#cover .eyebrow{color:rgba(253,249,243,.66)}
+.cover-names{
+  font-size:clamp(30px,10vw,46px);letter-spacing:.08em;font-weight:500;
+  line-height:1.4;margin:14px 0 4px;
+}
+.cover-names .amp{font-size:.5em;color:rgba(253,249,243,.72);margin:0 .4em;font-style:italic}
+.cover-lead{
+  font-size:clamp(14px,4vw,17px);letter-spacing:.16em;
+  color:rgba(253,249,243,.9);margin-top:16px;
+}
+.cover-date{
+  margin-top:26px;padding-top:20px;border-top:1px solid rgba(253,249,243,.24);
+  font-size:clamp(15px,4.4vw,18px);letter-spacing:.3em;color:rgba(253,249,243,.95);
+}
+.cover-week{
+  font-size:12px;letter-spacing:.24em;color:rgba(253,249,243,.66);margin-top:8px;
+}
+.scroll-hint{
+  position:absolute;bottom:22px;left:0;right:0;text-align:center;
+  color:rgba(253,249,243,.7);
+  animation:fadeUp .8s var(--ease) 1.5s both;   /* 等文字出完再出现 */
+}
+.scroll-hint span{font-family:var(--font-label);font-size:10px;letter-spacing:.3em}
+.scroll-hint i{
+  display:block;width:1px;height:32px;margin:8px auto 0;
+  background:linear-gradient(rgba(253,249,243,.85),transparent);
+  animation:drop 2.2s var(--ease) infinite;
+}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* 系统开启「减少动态效果」时，关掉封面所有装饰性动画
+   （照顾晕动症用户和省电模式，内容本身照常显示） */
+@media (prefers-reduced-motion: reduce){
+  #cover .bg,
+  #cover .bg img,
+  #cover .inner > *,
+  .scroll-hint,
+  .scroll-hint i{
+    animation:none !important;
+  }
+}
+
+/* ============================================================
+   邀请语
+   ============================================================ */
+#invite{background:var(--paper);text-align:center}
+.invite-text{
+  max-width:24em;margin:0 auto;text-align:left;
+  font-size:clamp(15px,4.2vw,17px);line-height:2.5;
+  color:var(--ink-soft);letter-spacing:.04em;
+}
+.invite-text p+p{margin-top:1.35em}
+.invite-text strong{font-weight:500;color:var(--ink)}
+.sign{
+  margin-top:clamp(30px,8vw,44px);font-size:12.5px;
+  letter-spacing:.2em;color:var(--ink-faint);
+}
+
+/* ============================================================
+   照片
+   ============================================================ */
+#photos{background:var(--paper)}
+.phead{margin-bottom:clamp(24px,6vw,34px)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(7px,2vw,12px)}
+.pcell{
+  position:relative;overflow:hidden;border:0;padding:0;
+  background:var(--paper-2);cursor:pointer;aspect-ratio:3/4;
+}
+.pcell img{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(.94) contrast(1.02);
+  transition:transform .9s var(--ease);
+}
+.pcell:active img{transform:scale(1.04)}
+@media(hover:hover){.pcell:hover img{transform:scale(1.03)}}
+/* 张数为奇数时，最后一张自动占满整行，避免留下半格空缺
+   （last-child:nth-child(odd) = 最后一个且位于奇数位 = 总数是奇数） */
+.pgrid .pcell:last-child:nth-child(odd){grid-column:1/-1;aspect-ratio:3/2}
+
+/* 大图 */
+#lightbox{
+  position:fixed;inset:0;z-index:10000;background:rgba(28,24,19,.97);
+  display:none;align-items:center;justify-content:center;
+}
+#lightbox.on{display:flex}
+#lightbox img{max-width:94vw;max-height:82svh;object-fit:contain}
+#lb-close{
+  position:absolute;top:16px;right:16px;width:40px;height:40px;
+  border:1px solid rgba(253,249,243,.32);background:transparent;
+  color:#FDF9F3;border-radius:50%;font-size:18px;cursor:pointer;line-height:1;
+}
+#lb-count{
+  position:absolute;bottom:24px;left:0;right:0;text-align:center;
+  color:rgba(253,249,243,.6);font-family:var(--font-label);font-size:11px;letter-spacing:.28em;
+}
+#lb-prev,#lb-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:60px;border:0;background:transparent;
+  color:rgba(253,249,243,.55);font-size:26px;cursor:pointer;
+}
+#lb-prev{left:2px}#lb-next{right:2px}
+
+/* ============================================================
+   时间地点
+   ============================================================ */
+#info{background:var(--paper-2)}
+.info-card{max-width:560px;margin:0 auto}
+.irow{
+  padding:clamp(16px,4vw,20px) 0;border-bottom:1px solid var(--line);
+}
+.irow:first-child{border-top:1px solid var(--line)}
+.irow:last-child{border-bottom:0}
+.ilabel{
+  font-family:var(--font-label);font-size:10.5px;letter-spacing:.26em;
+  color:var(--ink-faint);margin-bottom:6px;
+}
+.ivalue{font-size:clamp(16px,4.4vw,18px);letter-spacing:.06em;line-height:1.75}
+.ivalue small{
+  display:block;font-size:12.5px;color:var(--ink-soft);
+  letter-spacing:.04em;margin-top:5px;line-height:1.8;
+}
+/* 地点下方的温馨提醒（交通提示）；CONFIG.venueTip 留空时整块不显示 */
+.vtip{
+  margin-top:12px;padding:11px 14px;
+  background:var(--paper-2);border-left:2px solid var(--accent);
+  font-size:13px;line-height:1.9;letter-spacing:.03em;
+  color:var(--ink-soft);text-align:left;
+}
+.vtip b{color:var(--accent);font-weight:600}
+.vtip:empty{display:none}
+.big-date{font-size:clamp(20px,5.6vw,24px);letter-spacing:.08em}
+.big-date .wd{font-size:.62em;color:var(--ink-soft);letter-spacing:.14em;margin-left:.6em}
+
+.cd-line{
+  margin-top:clamp(26px,7vw,36px);text-align:center;
+  font-size:13px;letter-spacing:.14em;color:var(--ink-soft);
+}
+.cd-line b{color:var(--accent);font-size:20px;font-weight:500;margin:0 .15em;font-variant-numeric:tabular-nums}
+
+.btn-map{
+  width:100%;margin-top:clamp(26px,7vw,34px);padding:16px;
+  border:1px solid var(--ink);background:transparent;
+  font-size:13.5px;letter-spacing:.2em;cursor:pointer;
+  transition:background .3s var(--ease),color .3s var(--ease);
+}
+.btn-map:active{background:var(--ink);color:var(--paper)}
+@media(hover:hover){.btn-map:hover{background:var(--ink);color:var(--paper)}}
+
+/* ============================================================
+   回执
+   ============================================================ */
+#rsvp{background:var(--paper)}
+.form{max-width:560px;margin:0 auto}
+.field{margin-bottom:20px}
+.label{
+  display:block;font-size:12.5px;letter-spacing:.14em;
+  color:var(--ink-soft);margin-bottom:9px;
+}
+.label .req{color:var(--accent);margin-left:3px}
+.input,.select,.textarea{
+  width:100%;padding:12px 0;background:transparent;
+  border:0;border-bottom:1px solid var(--line);border-radius:0;
+  font-size:15.5px;letter-spacing:.03em;
+  transition:border-color .3s var(--ease);
+  -webkit-appearance:none;appearance:none;
+}
+.select{
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);
+  background-position:calc(100% - 9px) 20px,calc(100% - 4px) 20px;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+}
+.input:focus,.select:focus,.textarea:focus{outline:0;border-color:var(--accent)}
+.input::placeholder,.textarea::placeholder{color:var(--ink-faint)}
+.textarea{min-height:80px;resize:vertical;line-height:1.9}
+
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice label{
+  display:flex;align-items:center;justify-content:center;
+  padding:14px 8px;border:1px solid var(--line);cursor:pointer;
+  font-size:14.5px;letter-spacing:.08em;
+  transition:all .28s var(--ease);
+}
+.choice input:checked+label{border-color:var(--accent);background:var(--accent);color:#FDF9F3}
+
+.cond{
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height .5s var(--ease),opacity .35s var(--ease),margin .4s var(--ease);
+}
+.cond.on{max-height:760px;opacity:1;margin-top:20px}
+
+/* 来不了时的喜糖提示 */
+.hint{
+  background:var(--paper-2);border-left:2px solid var(--accent);
+  padding:13px 15px;margin-bottom:22px;
+  font-size:13.5px;line-height:1.95;color:var(--ink-soft);letter-spacing:.04em;
+}
+
+/* 回执截止时间 */
+.deadline{
+  max-width:560px;margin:clamp(20px,5vw,28px) auto 0;
+  padding:13px 17px;
+  background:var(--paper-2);border-left:2px solid var(--accent);
+  font-size:13.5px;line-height:1.95;color:var(--ink-soft);letter-spacing:.04em;
+}
+.deadline b{color:var(--ink);font-weight:500}
+.deadline:empty{display:none}
+
+.stepper{display:flex;align-items:center;border:1px solid var(--line);width:fit-content}
+.stepper button{
+  width:44px;height:44px;border:0;background:transparent;
+  font-size:18px;cursor:pointer;color:var(--ink-soft);
+}
+.stepper button:active{background:var(--paper-2)}
+.stepper output{
+  width:54px;text-align:center;font-size:16px;line-height:44px;
+  border-left:1px solid var(--line);border-right:1px solid var(--line);
+  font-variant-numeric:tabular-nums;
+}
+
+.submit{
+  width:100%;padding:16px;margin-top:8px;
+  background:var(--ink);color:var(--paper);border:0;
+  font-size:14.5px;letter-spacing:.28em;text-indent:.28em;cursor:pointer;
+  transition:background .3s var(--ease),transform .15s var(--ease);
+}
+.submit:active{transform:scale(.985)}
+.submit[disabled]{opacity:.45;cursor:not-allowed}
+@media(hover:hover){.submit:hover{background:#171310}}
+
+.form-note{
+  margin-top:14px;font-size:11.5px;color:var(--ink-faint);
+  letter-spacing:.04em;text-align:center;line-height:1.85;
+}
+
+.done{text-align:center;padding:clamp(26px,7vw,44px) 0;display:none}
+.done.on{display:block;animation:fadeUp .6s var(--ease)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.done .mark{
+  width:52px;height:52px;margin:0 auto 20px;border:1px solid var(--accent);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:var(--accent);font-size:23px;
+}
+.done h3{font-size:20px;letter-spacing:.12em;margin-bottom:11px;font-weight:500}
+.done p{font-size:14px;color:var(--ink-soft);line-height:2.05;letter-spacing:.05em}
+.done pre{
+  text-align:left;background:var(--paper-2);border:1px solid var(--line);
+  padding:14px 16px;margin:20px 0 14px;font-family:var(--font-label);
+  font-size:13px;line-height:1.95;white-space:pre-wrap;word-break:break-all;
+  max-height:230px;overflow:auto;
+}
+.copy-btn{
+  width:100%;padding:15px;background:var(--accent);color:#FDF9F3;border:0;
+  font-size:14px;letter-spacing:.22em;text-indent:.22em;cursor:pointer;
+  transition:opacity .25s var(--ease),background .25s var(--ease);
+}
+.copy-btn:active{opacity:.85}
+.copy-btn.copied{background:#3D7A57}
+.copy-tip{margin-top:11px;font-size:12px;color:var(--ink-faint);letter-spacing:.04em;line-height:1.85}
+.copy-tip b{color:var(--ink-soft)}
+.again{
+  margin-top:24px;background:transparent;border:1px solid var(--line);
+  padding:10px 22px;font-size:12.5px;letter-spacing:.16em;cursor:pointer;
+}
+.err{
+  margin-top:13px;padding:11px 14px;background:rgba(180,103,74,.08);
+  border-left:2px solid var(--accent);font-size:13px;color:var(--accent);
+  letter-spacing:.03em;display:none;line-height:1.8;
+}
+.err.on{display:block}
+
+/* ============================================================
+   结尾
+   ============================================================ */
+#ending{
+  background:var(--ink);color:#F5EFE6;text-align:center;
+  padding:clamp(66px,16vw,110px) var(--pad);
+}
+.ending-h{font-size:clamp(22px,6.4vw,30px);letter-spacing:.2em;font-weight:400;margin-bottom:16px}
+.ending-p{
+  font-size:13.5px;color:rgba(245,239,230,.62);letter-spacing:.1em;
+  line-height:2.1;max-width:26em;margin:0 auto;
+}
+/* 重点句「不用准备什么，人来就好。」——单独放大，不影响其它 .ending-p */
+#endText{font-size:clamp(15px,4.2vw,16.5px);line-height:2;letter-spacing:.1em}
+.ending-names{
+  margin-top:34px;padding-top:26px;border-top:1px solid rgba(245,239,230,.16);
+  font-size:13px;letter-spacing:.26em;color:rgba(245,239,230,.82);
+}
+.foot{
+  margin-top:38px;font-family:var(--font-label);font-size:10px;
+  letter-spacing:.2em;color:rgba(245,239,230,.28);line-height:2;
+}
+
+/* ---------- 背景音乐按钮 ---------- */
+#musicBtn{
+  position:fixed;top:14px;right:14px;z-index:9990;
+  width:36px;height:36px;border-radius:50%;border:0;
+  background:rgba(43,38,34,.58);backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  color:#FDF9F3;cursor:pointer;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 2px 12px rgba(0,0,0,.16);
+  transition:opacity .35s var(--ease),background .3s var(--ease);
+}
+#musicBtn.on{display:flex}
+#musicBtn.spin{animation:spin 4.5s linear infinite}
+#musicBtn.muted{opacity:.5}
+#musicBtn:active{background:rgba(43,38,34,.8)}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<svg id="grain" xmlns="http://www.w3.org/2000/svg">
+  <filter id="noise">
+    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noise)" opacity="0.3"/>
+</svg>
+
+<!-- ========================= 封面 ========================= -->
+<header id="cover">
+  <div class="bg"><img id="coverImg" src="assets/photo-1.jpg" alt="封面照片" fetchpriority="high"></div>
+  <div class="scrim"></div>
+  <div class="inner">
+    <div class="eyebrow">We're getting married</div>
+    <h1 class="cover-names" id="coverNames"></h1>
+    <div class="cover-lead" id="coverLead"></div>
+    <div class="cover-date" id="coverDate"></div>
+    <div class="cover-week" id="coverWeek"></div>
+  </div>
+  <div class="scroll-hint"><span>向上滑动</span><i></i></div>
+</header>
+
+<!-- ========================= 邀请语 ========================= -->
+<section id="invite" class="sec">
+  <div class="rise">
+    <div class="eyebrow">Invitation</div>
+    <div class="invite-text" id="inviteText" style="margin-top:26px"></div>
+    <div class="sign" id="inviteSign"></div>
+  </div>
+</section>
+
+<!-- ========================= 照片 ========================= -->
+<!-- <section id="photos" class="sec" style="padding-top:0">
+  <div class="phead rise">
+    <div class="eyebrow">Photos</div>
+  </div>
+  <div class="pgrid rise" id="pgrid"></div>
+</section> -->
+
+<!-- ========================= 时间地点 ========================= -->
+<section id="info" class="sec">
+  <div class="rise">
+    <div class="eyebrow">When &amp; Where</div>
+    <h2 class="sec-title" style="margin-top:14px">时间地点</h2>
+    <p class="sec-sub" id="infoSub"></p>
+  </div>
+  <div class="info-card rise" style="margin-top:clamp(28px,7vw,40px)">
+    <div class="irow">
+      <div class="ilabel">DATE · 日期</div>
+      <div class="ivalue"><span class="big-date" id="iDate"></span></div>
+    </div>
+    <div class="irow">
+      <div class="ilabel">TIME · 时间</div>
+      <div class="ivalue" id="iTime"></div>
+    </div>
+    <div class="irow">
+      <div class="ilabel">VENUE · 地点</div>
+      <div class="ivalue" id="iVenue"></div>
+      <div class="vtip" id="iVenueTip"></div>
+    </div>
+    <div class="irow">
+      <div class="ilabel">NOTE · 备注</div>
+      <div class="ivalue" id="iNote"></div>
+    </div>
+    <div class="cd-line" id="cdLine"></div>
+    <button class="btn-map" id="btnMap">导航到餐厅</button>
+  </div>
+</section>
+
+<!-- ========================= 回执 ========================= -->
+<section id="rsvp" class="sec">
+  <div class="rise">
+    <div class="eyebrow">RSVP</div>
+    <h2 class="sec-title" style="margin-top:14px" id="rsvpTitle"></h2>
+    <p class="sec-sub" id="rsvpSub"></p>
+  </div>
+
+  <!-- 回执截止时间提示（CONFIG.rsvpDeadline 留空则自动隐藏） -->
+  <div class="deadline rise" id="rsvpDeadline"></div>
+
+  <div class="form rise" id="formWrap" style="margin-top:clamp(28px,7vw,40px)">
+    <form id="rsvpForm" novalidate>
+      <div class="field">
+        <label class="label" for="fName">怎么称呼你<span class="req">*</span></label>
+        <input class="input" id="fName" name="name" type="text" maxlength="20"
+               placeholder="你的名字" autocomplete="name">
+      </div>
+
+      <div class="field">
+        <span class="label">来不来<span class="req">*</span></span>
+        <div class="choice">
+          <input type="radio" id="att1" name="attending" value="出席" checked>
+          <label for="att1">我要去</label>
+          <input type="radio" id="att2" name="attending" value="无法出席">
+          <label for="att2">这次不行</label>
+        </div>
+      </div>
+
+      <!-- 能来：问人数和忌口 -->
+      <div class="cond" id="condYes">
+        <div class="field">
+          <span class="label">几位（含你本人）</span>
+          <div class="stepper">
+            <button type="button" id="minus" aria-label="减少">−</button>
+            <output id="paxOut">1</output>
+            <button type="button" id="plus" aria-label="增加">＋</button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="fDiet">忌口或需要留意的事</label>
+          <input class="input" id="fDiet" name="diet" type="text" maxlength="40"
+                 placeholder="不吃辣 / 带对象">
+        </div>
+      </div>
+
+      <!-- 来不了：留地址寄喜糖 -->
+      <div class="cond" id="condNo">
+        <p class="hint" id="candyHint"></p>
+        <div class="field">
+          <label class="label" for="fShipName">收件人姓名</label>
+          <input class="input" id="fShipName" name="shipName" type="text" maxlength="20"
+                 placeholder="留空就用上面的称呼">
+        </div>
+        <div class="field">
+          <label class="label" for="fShipAddr">收件地址<span class="req">*</span></label>
+          <textarea class="textarea" id="fShipAddr" name="shipAddr" maxlength="160"
+                    placeholder="省市区 + 详细地址，我们寄喜糖过去"></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="fPhone" id="phoneLabel">手机号</label>
+        <input class="input" id="fPhone" name="phone" type="tel" maxlength="11"
+               inputmode="numeric" placeholder="11 位手机号" autocomplete="tel">
+      </div>
+
+      <div class="field">
+        <label class="label" for="fMsg">想说的话</label>
+        <textarea class="textarea" id="fMsg" name="message" maxlength="200"
+                  placeholder="随便写点什么都行"></textarea>
+      </div>
+
+      <button class="submit" type="submit" id="submitBtn">发 送 回 执</button>
+      <div class="err" id="errBox"></div>
+      <!-- <p class="form-note">只是我们好提前安排座位，不会用作其他用途。</p> -->
+    </form>
+
+    <div class="done" id="doneBox">
+      <div class="mark" id="doneMark">✓</div>
+      <h3 id="doneTitle"></h3>
+      <p id="doneText"></p>
+      <div id="doneExtra"></div>
+      <button class="again" id="againBtn">修改回执</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 结尾 ========================= -->
+<footer id="ending">
+  <div class="rise">
+    <h2 class="ending-h" id="endTitle"></h2>
+    <p class="ending-p" id="endText"></p>
+    <div class="ending-names" id="endNames"></div>
+    <div class="foot" id="endFoot"></div>
+  </div>
+</footer>
+
+<!-- <div id="lightbox" role="dialog" aria-modal="true">
+  <button id="lb-close" aria-label="关闭">✕</button>
+  <button id="lb-prev" aria-label="上一张">‹</button>
+  <img id="lbImg" alt="照片大图">
+  <button id="lb-next" aria-label="下一张">›</button>
+  <div id="lb-count"></div>
+</div> -->
+
+<script>
+/* ============================================================
+   ★★★ 内容配置 —— 改这里就能改成您自己的请柬 ★★★
+   ============================================================ */
+const CONFIG = {
+  /* ---------- 新人 ---------- */
+  groom: "池才龙",
+  bride: "李晓文",
+
+  /* ---------- 婚宴时间 ---------- */
+  dateISO:  "2026-11-07T11:30:00",   // 格式别动；倒计时只取前面的日期，按自然日算
+  dateText: "2026 . 11 . 07",        // 封面显示
+  weekText: "星期六",
+  timeText: "11:30 入席  ·  12:00 开餐",
+  timeNote: "到了先坐，不用等我们。",
+
+  /* ---------- 地点 ---------- */
+  venue: "79号渔船海鲜饭店（旗舰店）· 7902-7909房",
+  hall:  "HALO 广场二期 2-3 层",
+  addr:  "深圳市罗湖区笋岗街道 HALO 广场二期 2-3 层",
+  city:  "深圳",
+  // 有精确坐标就填「经度,纬度」，留空则按店名搜索导航（一样准）
+  lnglat: "",
+  // 地点下方显示的温馨提醒（交通等）；留空则不显示。
+  // 想强调的词用 <b>包住</b>，会显示成强调色
+  venueTip: "高铁：买到 <b>深圳站</b> 会近一些，更方便。<br>地铁：可到7号线/9号线 <b>红岭北站</b> D出口、9号线 <b>园岭站</b> D出口。<br>自驾：车停在HALO广场二期/三期、万通大厦地面停车场、物资置地大厦负二/负三层。",
+
+  /* ---------- 文案 ---------- */
+  coverLead: "想请你来吃顿饭",
+
+  invite: [
+    "我们要结婚了。",
+    "没什么复杂的仪式，",
+    "就是想借这个日子，",
+    "把平时难得凑齐的朋友，",
+    "叫到一起吃顿饭、聊聊天。",
+    "没有长辈，只有年轻人，",
+    "那天有空的话，来搂席吧。"
+  ],
+  inviteSign: "—— 池才龙 & 李晓文",
+
+  infoSub: "就这些，别的没有了",
+  infoNote: "中午一起吃个饭，穿着随意就好",
+
+  rsvpTitle: "来不来，说一声",
+  rsvpSub:   "我们好提前订位",
+  // 表单上方显示的截止时间提示；留空则不显示
+  rsvpDeadline: "请在 10 月 18 日前回复我们，好提前安排座位和喜糖。",
+  // 网络提交失败时的标题
+  rsvpFail:  "啊噢出错了，请直接发给新人吧",
+  // 选「这次不行」时出现的提示，引导留下寄喜糖的信息
+  candyHint: "来不了也没关系。留个地址，我们给你寄份喜糖过去。",
+
+  endTitle: "那天见",
+  endText:  "不用准备什么，人来就好。",
+  endFoot:  "",
+
+  /* ---------- 回执提交 ----------
+     mode:
+       "auto"  先联网，失败自动转「复制回执」发新人（推荐）
+       "copy"  完全不联网，直接出复制文字（最稳）
+       "api"   只提交到自建接口
+       "formsubmit" 只用境外邮件服务，失败不兜底
+       "off"   仅存访客本机，你收不到
+  ------------------------------------------------ */
+  rsvp: {
+    mode: "auto",
+    apiUrl: "",
+    email: "chiclong@mail2.sysu.edu.cn",
+    timeout: 8000,
+    contact: { wechat: "", phone: "" }   // ← 建议至少填一个，网络失败时给客人看
+  },
+
+  /* ---------- 照片 ----------
+     直接替换 assets/ 里的同名文件即可，不用改代码。
+     建议：竖图、jpg、单张 500KB 以内。
+
+     注意：assets/photo-1.jpg 是【封面专用】，
+     不要放进下面的数组，否则会和封面重复出现。
+     封面想换就换 photo-1.jpg；想换封面用哪张，改 index.html 里
+     <img id="coverImg"> 的 src 即可。
+
+     下面的照片按两列排，想增减张数直接增删行：
+     4 张 = 2×2，6 张 = 2×3，都很整齐；
+     奇数张时最后一张会自动占满整行，不会留半格空缺。
+  ------------------------------------------------ */
+  photos: [
+    { src:"assets/photo-2.jpg", alt:"照片一" },
+    { src:"assets/photo-3.jpg", alt:"照片二" },
+    { src:"assets/photo-4.jpg", alt:"照片三" },
+    { src:"assets/photo-5.jpg", alt:"照片四" }
+  ],
+
+  /* ---------- 背景音乐 ----------
+     把音乐文件放到 assets/bgm.mp3（同名覆盖）即可。
+     src 留空 → 不显示音乐按钮。
+     说明：
+       · 手机浏览器/微信不允许自动播放，需要访客在页面上点一下才响，
+         这是浏览器的硬性限制，不是 bug。
+       · 音乐只在首次交互时才加载，不影响首屏速度。
+       · 建议 1-3 分钟纯音乐、3MB 以内；用有版权的流行歌有风险，慎用。
+  ------------------------------------------------ */
+  music: {
+    src: "assets/bgm.mp3",
+    volume: 0.45,
+    autoplay: true
+  }
+};
+
+/* ============================================================
+   页面逻辑
+   ============================================================ */
+(function(){
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+  const P = CONFIG.photos;
+
+  /* ---------- 封面 ---------- */
+  $("#coverNames").innerHTML = `${CONFIG.groom}<span class="amp">&amp;</span>${CONFIG.bride}`;
+  $("#coverLead").textContent = CONFIG.coverLead;
+  $("#coverDate").textContent = CONFIG.dateText;
+  $("#coverWeek").textContent = CONFIG.weekText;
+  document.title = `我们要结婚了 · ${CONFIG.groom} & ${CONFIG.bride}`;
+
+  /* ---------- 邀请语 ---------- */
+  $("#inviteText").innerHTML =
+    CONFIG.invite.map(l => `<p>${l}</p>`).join("");
+  $("#inviteSign").textContent = CONFIG.inviteSign;
+
+  /* ---------- 照片：统一两列 ----------
+     封面已经是全屏大图，这里就不再放"整幅"了，
+     否则两张大图挨着会显得重复。统一两列，节奏更干净。 */
+  /* 照片区。
+     如果把 HTML 里的 <section id="photos"> 注释掉了，
+     这里会自动整段跳过，不会影响时间地点、回执、音乐等其他功能。
+     想恢复照片，把那段 HTML 的注释去掉即可，不用动这里。 */
+  if($("#pgrid")){
+  const grid = $("#pgrid");
+  grid.innerHTML = P.map((p,i)=>`
+    <button class="pcell" data-i="${i}" aria-label="查看${p.alt}">
+      <img src="${p.src}" alt="${p.alt}" loading="${i<2?"eager":"lazy"}" decoding="async">
+    </button>`).join("");
+
+  /* ---------- 大图 ---------- */
+  const lb = $("#lightbox"), lbImg = $("#lbImg"), lbCount = $("#lb-count");
+  let cur = 0;
+  const openLB = i => {
+    cur = (i + P.length) % P.length;
+    lbImg.src = P[cur].src;
+    lbCount.textContent = `${cur+1} / ${P.length}`;
+    lb.classList.add("on");
+    document.body.style.overflow = "hidden";
+  };
+  const closeLB = () => { lb.classList.remove("on"); document.body.style.overflow=""; };
+  grid.addEventListener("click", e => {
+    const c = e.target.closest(".pcell"); if(c) openLB(+c.dataset.i);
+  });
+  $("#lb-close").onclick = closeLB;
+  $("#lb-prev").onclick = e => { e.stopPropagation(); openLB(cur-1); };
+  $("#lb-next").onclick = e => { e.stopPropagation(); openLB(cur+1); };
+  lb.addEventListener("click", e => { if(e.target === lb) closeLB(); });
+  let tx0 = null;
+  lb.addEventListener("touchstart", e => tx0 = e.touches[0].clientX, {passive:true});
+  lb.addEventListener("touchend", e => {
+    if(tx0 === null) return;
+    const dx = e.changedTouches[0].clientX - tx0;
+    if(Math.abs(dx) > 44) openLB(cur + (dx < 0 ? 1 : -1));
+    tx0 = null;
+  }, {passive:true});
+  }   // ← 对应上面 if($("#pgrid")){
+
+  /* ---------- 时间地点 ---------- */
+  // $("#infoSub").textContent = CONFIG.infoSub;
+  $("#iDate").innerHTML = `${CONFIG.dateText}<span class="wd">${CONFIG.weekText}</span>`;
+  $("#iTime").innerHTML = `${CONFIG.timeText}<small>${CONFIG.timeNote}</small>`;
+  // $("#iVenue").innerHTML = `${CONFIG.venue}<small>${CONFIG.hall} · ${CONFIG.addr}</small>`;
+  $("#iVenue").innerHTML = `${CONFIG.venue}<small>${CONFIG.addr}</small>`;
+  const vtip = $("#iVenueTip");
+  if(CONFIG.venueTip){
+    vtip.innerHTML = CONFIG.venueTip;
+    vtip.style.display = "";
+  }else{
+    vtip.innerHTML = "";
+    vtip.style.display = "none";
+  }
+  $("#iNote").textContent = CONFIG.infoNote;
+
+  $("#btnMap").onclick = () => {
+    const name = CONFIG.venue;
+    const kw   = encodeURIComponent(`${name} ${CONFIG.hall || ""}`.trim());
+    const city = encodeURIComponent(CONFIG.city || "");
+    const isWX = /MicroMessenger/i.test(navigator.userAgent);
+    const ll   = (CONFIG.lnglat || "").trim();
+    let url;
+    if (ll && ll.includes(",")) {
+      const [lng, lat] = ll.split(",").map(s=>s.trim());
+      url = isWX
+        ? `https://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lng};title:${encodeURIComponent(name)}&referer=wedding`
+        : `https://uri.amap.com/marker?position=${lng},${lat}&name=${encodeURIComponent(name)}&src=wedding&coordinate=gaode`;
+    } else {
+      url = isWX
+        ? `https://apis.map.qq.com/uri/v1/search?keyword=${kw}&region=${city}&referer=wedding`
+        : `https://uri.amap.com/search?keyword=${kw}&city=${city}&src=wedding`;
+    }
+    location.href = url;
+  };
+
+  /* ---------- 倒计时（按自然日算，不受「现在几点」影响） ---------- */
+  const day0   = new Date(CONFIG.dateISO.slice(0, 10) + "T00:00:00");  // 婚礼当天 0 点
+  const today0 = new Date(); today0.setHours(0, 0, 0, 0);              // 今天 0 点
+  const diff = Math.round((day0 - today0) / 86400000);
+  $("#cdLine").innerHTML = diff > 0
+    ? `还有 <b>${diff}</b> 天`
+    : "那天见";
+
+  /* ---------- 结尾 ---------- */
+  $("#endTitle").textContent = CONFIG.endTitle;
+  $("#endText").textContent  = CONFIG.endText;
+  $("#endNames").textContent = `${CONFIG.groom} & ${CONFIG.bride} · ${CONFIG.dateText}`;
+  // 结尾落款留空就整块隐藏，避免留下一段空白间距
+  const endFoot = $("#endFoot");
+  endFoot.textContent = CONFIG.endFoot || "";
+  endFoot.style.display = CONFIG.endFoot ? "" : "none";
+
+  /* ---------- 背景音乐 ----------
+     要点：手机/微信禁止自动播放，必须等访客在页面上点一下才响；
+     且音频只在首次交互时才真正加载，不拖慢首屏。
+     文件不存在时按钮会自动消失。 */
+(function initMusic(){
+  const m = CONFIG.music || {};
+  if(!m.src) return;
+
+  const btn = document.createElement("button");
+  btn.id = "musicBtn";
+  btn.type = "button";
+  btn.setAttribute("aria-label","背景音乐");
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" '+
+    'stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+
+    '<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="2.6" fill="currentColor" stroke="none"/>'+
+    '<circle cx="17" cy="16" r="2.6" fill="currentColor" stroke="none"/></svg>';
+  document.body.appendChild(btn);
+
+  const audio = new Audio(m.src);
+  audio.loop   = true;
+  audio.volume = (m.volume == null ? 0.45 : m.volume);
+  audio.preload = "metadata";        // 只取头部信息，既能探活又不下载整首
+
+  btn.classList.add("on","muted");
+  audio.addEventListener("error", ()=>{ btn.classList.remove("on"); });   // 文件没了就撤掉按钮
+
+  const play = () => {
+    const p = audio.play();
+    if(p && p.then){
+      p.then(()=>{ btn.classList.add("spin"); btn.classList.remove("muted"); })
+       .catch(()=>{ btn.classList.remove("spin"); btn.classList.add("muted"); });
+    }else{
+      btn.classList.add("spin"); btn.classList.remove("muted");
+    }
+  };
+  const pause = () => { audio.pause(); btn.classList.remove("spin"); btn.classList.add("muted"); };
+
+  btn.onclick = e => {
+    e.stopPropagation();
+    if(audio.paused) play(); else pause();
+  };
+
+  if(m.autoplay !== false){
+    // 访客第一次碰页面（点或滑）时起播 —— 这是浏览器允许的最早时机
+    const once = () => {
+      play();
+      document.removeEventListener("touchstart", once);
+      document.removeEventListener("click", once);
+    };
+    document.addEventListener("touchstart", once, {once:true});
+    document.addEventListener("click", once, {once:true});
+  }
+})();
+
+  /* ---------- 滚动进场 ---------- */
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  },{threshold:.1,rootMargin:"0px 0px -6% 0px"});
+  $$(".rise").forEach(el=>io.observe(el));
+
+  /* ============================================================
+     回执
+     ============================================================ */
+  const form = $("#rsvpForm"), formWrap = $("#formWrap");
+  const doneBox = $("#doneBox"), errBox = $("#errBox"), submitBtn = $("#submitBtn");
+  const condYes = $("#condYes"), condNo = $("#condNo");
+  let pax = 1;
+
+  $("#rsvpTitle").textContent = CONFIG.rsvpTitle;
+  $("#rsvpSub").textContent   = CONFIG.rsvpSub;
+  $("#candyHint").textContent = CONFIG.candyHint;
+
+  // 截止时间提示：自动把「10 月 18 日」这类日期加粗，留空则不渲染
+  const dl = $("#rsvpDeadline");
+  if(CONFIG.rsvpDeadline){
+    dl.innerHTML = CONFIG.rsvpDeadline.replace(/(\d+\s*月\s*\d+\s*日)/g, "<b>$1</b>");
+  }
+
+  // 来 / 不来，两个分支：字段不相关，禁用另一侧避免提交脏数据
+  const syncCond = () => {
+    const yes = $("#att1").checked;
+    condYes.classList.toggle("on", yes);
+    condNo.classList.toggle("on", !yes);
+    $("#fDiet").disabled     = !yes;
+    $("#fShipName").disabled = yes;
+    $("#fShipAddr").disabled = yes;
+    // 手机号在两种情况下用途不同，标签跟着变
+    $("#phoneLabel").innerHTML = yes
+      ? "手机号<small style='display:block;font-size:11.5px;color:var(--ink-faint);margin-top:2px;letter-spacing:.02em'>选填，方便当天联系</small>"
+      : "手机号<small style='display:block;font-size:11.5px;color:var(--ink-faint);margin-top:2px;letter-spacing:.02em'>寄喜糖要用，快递员联系你</small>";
+  };
+  $$('input[name="attending"]').forEach(r=>r.addEventListener("change", syncCond));
+  syncCond();
+
+  $("#minus").onclick = () => { pax = Math.max(1, pax-1); $("#paxOut").textContent = pax; };
+  $("#plus").onclick  = () => { pax = Math.min(20, pax+1); $("#paxOut").textContent = pax; };
+  $("#fPhone").addEventListener("input", e=>{
+    e.target.value = e.target.value.replace(/\D/g,"").slice(0,11);
+  });
+
+  const showErr = m => { errBox.textContent = m; errBox.classList.add("on"); };
+  const hideErr = () => errBox.classList.remove("on");
+
+  form.addEventListener("submit", async ev=>{
+    ev.preventDefault();
+    hideErr();
+
+    const name = $("#fName").value.trim();
+    if(!name){ showErr("留个名字吧 🙂"); $("#fName").focus(); return; }
+    const phone = $("#fPhone").value.trim();
+    if(phone && !/^1[3-9]\d{9}$/.test(phone)){ showErr("手机号看着不太对，检查一下？"); $("#fPhone").focus(); return; }
+
+    const attending = $('input[name="attending"]:checked').value === "出席";
+    // 来不了时收集寄喜糖的信息；地址留空也没关系，不强求
+    const shipAddr = attending ? "" : $("#fShipAddr").value.trim();
+    const payload = {
+      name, attending,
+      pax:   attending ? pax : 0,
+      diet:  attending ? $("#fDiet").value.trim() : "",
+      shipName: !attending ? ($("#fShipName").value.trim() || name) : "",
+      shipAddr: shipAddr,
+      phone, message: $("#fMsg").value.trim(),
+      ts: new Date().toISOString()
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "发 送 中…";
+
+    const mode = CONFIG.rsvp.mode;
+    let sent = false;
+    // 只有需要联网的模式才走网络；"copy"/"off" 直接跳过，不让客人干等
+    if(mode !== "copy" && mode !== "off"){
+      try{
+        await withTimeout(send(payload), CONFIG.rsvp.timeout || 8000);
+        sent = true;
+      }catch(err){
+        console.warn("[RSVP] 网络提交失败，转复制回执：", err);
+      }
+    }
+
+    try{ localStorage.setItem("rsvp_sent", JSON.stringify(payload)); }catch(_){}
+    submitBtn.disabled = false;
+    submitBtn.textContent = "发 送 回 执";
+
+    if(sent) showDone(payload); else showCopyFallback(payload);
+  });
+
+  function withTimeout(promise, ms){
+    return new Promise((resolve, reject)=>{
+      const t = setTimeout(()=>reject(new Error("请求超时")), ms);
+      promise.then(v=>{ clearTimeout(t); resolve(v); }, e=>{ clearTimeout(t); reject(e); });
+    });
+  }
+
+  function send(data){
+    const {mode, apiUrl, email} = CONFIG.rsvp;
+    if(mode === "api" || (mode === "auto" && apiUrl)){
+      return fetch(apiUrl, {
+        method:"POST", headers:{"Content-Type":"application/json"},
+        body: JSON.stringify(data)
+      }).then(r=>{ if(!r.ok) throw new Error("HTTP " + r.status); });
+    }
+    if(mode === "formsubmit" || mode === "auto"){
+      if(!email) throw new Error("未配置接收邮箱");
+      const fd = new FormData();
+      fd.append("name", data.name);
+      fd.append("attending", data.attending ? "出席" : "缺席");
+      fd.append("pax", data.pax);
+      fd.append("diet", data.diet);
+      fd.append("phone", data.phone);
+      fd.append("message", data.message);
+      if(!data.attending){
+        fd.append("收件人", data.shipName);
+        fd.append("收件地址", data.shipAddr || "（未填）");
+      }
+      fd.append("_subject", `回执：${data.name} — ${data.attending?"出席":"缺席"}${!data.attending&&data.shipAddr?"（需寄喜糖）":""}`);
+      fd.append("_template", "table");
+      fd.append("_captcha", "false");
+      return fetch(`https://formsubmit.co/${encodeURIComponent(email)}`, {
+        method:"POST", body: fd
+      }).then(r=>{ if(!r.ok) throw new Error("HTTP " + r.status); });
+    }
+    return new Promise(r=>setTimeout(r,650));
+  }
+
+  function rsvpText(d){
+    const L = [`【回执】${CONFIG.groom} & ${CONFIG.bride} · ${CONFIG.dateText}`,
+               `姓名：${d.name}`];
+    if(d.attending){
+      L.push(`出席：去（${d.pax} 人）`);
+      if(d.diet) L.push(`忌口：${d.diet}`);
+    }else{
+      L.push(`出席：这次去不了`);
+      L.push(`寄喜糖：${d.shipAddr ? "要" : "不用，谢谢"}`);
+      if(d.shipAddr){
+        L.push(`收件人：${d.shipName || d.name}`);
+        L.push(`地址：${d.shipAddr}`);
+      }
+    }
+    if(d.phone)   L.push(`电话：${d.phone}`);
+    if(d.message) L.push(`留言：${d.message}`);
+    // 时间戳：方便事后按提交顺序汇总（tools/parse_rsvp.py 会读这一行）
+    const _t = new Date(), _p = n => String(n).padStart(2,"0");
+    L.push(`时间：${_t.getFullYear()}-${_p(_t.getMonth()+1)}-${_p(_t.getDate())} ${_p(_t.getHours())}:${_p(_t.getMinutes())}`);
+    return L.join("\n");
+  }
+
+  async function copyText(t){
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(t); return true;
+      }
+    }catch(_){}
+    try{
+      const ta = document.createElement("textarea");
+      ta.value = t; ta.setAttribute("readonly","");
+      ta.style.cssText = "position:fixed;left:-9999px;top:0;opacity:0;";
+      document.body.appendChild(ta);
+      ta.select(); ta.setSelectionRange(0, t.length);
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return ok;
+    }catch(_){ return false; }
+  }
+
+  function showCopyFallback(d){
+    const text = rsvpText(d);
+    const c = CONFIG.rsvp.contact || {};
+    const to = [];
+    if(c.wechat) to.push(`微信号 <b>${c.wechat}</b>`);
+    if(c.phone)  to.push(`手机号 <b>${c.phone}</b>`);
+    const target = to.length ? to.join(" 或 ") : "新人的微信";
+
+    form.style.display = "none";
+    doneBox.classList.add("on");
+    $("#doneMark").textContent = "✎";
+    $("#doneTitle").textContent = CONFIG.rsvpFail;
+    $("#doneText").innerHTML =
+      `下面这段已经帮你写好了，<b>点一下复制</b>，`
+      + `发到${target}就好～`;
+    $("#doneExtra").innerHTML = `
+      <pre id="rsvpText">${text.replace(/</g,"&lt;")}</pre>
+      <button type="button" class="copy-btn" id="copyBtn">复 制 回 执</button>
+      <p class="copy-tip" id="copyTip">复制后<b>原样</b>发给我们即可，方便统计～</p>`;
+    $("#copyBtn").onclick = async ()=>{
+      const ok = await copyText(text);
+      if(ok){
+        const b = $("#copyBtn");
+        b.textContent = "已 复 制 ✓"; b.classList.add("copied");
+        $("#copyTip").innerHTML = "已复制！去微信粘贴发送给" + target + "就行～";
+      }else{
+        $("#copyTip").innerHTML = "复制没成功，请<b>长按上面的文字</b>手动选择复制。";
+      }
+    };
+    doneBox.scrollIntoView({behavior:"smooth", block:"center"});
+  }
+
+  function showDone(d){
+    form.style.display = "none";
+    doneBox.classList.add("on");
+    $("#doneMark").textContent = "✓";
+    $("#doneExtra").innerHTML = "";
+    if(d.attending){
+      $("#doneTitle").textContent = "好嘞，给你留位置";
+      $("#doneText").innerHTML =
+        `已经记下了${d.pax>1?`，<b>${d.pax} 位</b>`:""}。到时候见～<br>临时有变也没关系，随时说一声。`;
+    }else if(d.shipAddr){
+      $("#doneTitle").textContent = "喜糖记下了";
+      $("#doneText").innerHTML =
+        `地址收到了，我们寄份喜糖给你。<br>这次见不成，下次单独约。`;
+    }else{
+      $("#doneTitle").textContent = "好，知道了";
+      $("#doneText").innerHTML =
+        `这次有点可惜，下次单独约。<br>谢谢你特意回这一条。`;
+    }
+    doneBox.scrollIntoView({behavior:"smooth", block:"center"});
+  }
+
+  $("#againBtn").onclick = () => {
+    doneBox.classList.remove("on");
+    form.style.display = "";
+    formWrap.scrollIntoView({behavior:"smooth", block:"start"});
+  };
+
+  // 已提交过 → 回填
+  try{
+    const s = JSON.parse(localStorage.getItem("rsvp_sent") || "null");
+    if(s){
+      $("#fName").value = s.name || "";
+      $("#fPhone").value = s.phone || "";
+      $("#fMsg").value = s.message || "";
+      if(s.attending){
+        $("#att1").checked = true;
+        pax = s.pax || 1; $("#paxOut").textContent = pax;
+        if(s.diet) $("#fDiet").value = s.diet;
+      }else{
+        $("#att2").checked = true;
+        if(s.shipName) $("#fShipName").value = s.shipName;
+        if(s.shipAddr) $("#fShipAddr").value = s.shipAddr;
+      }
+      syncCond();
+    }
+  }catch(_){}
+})();
+</script>
+</body>
+</html>
